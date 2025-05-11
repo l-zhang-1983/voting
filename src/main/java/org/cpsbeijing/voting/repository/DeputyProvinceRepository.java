@@ -1,9 +1,9 @@
 package org.cpsbeijing.voting.repository;
 
-import org.cpsbeijing.voting.entity.DeputyProvince;
+import org.cpsbeijing.voting.entity.ConfigProvince;
 import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface DeputyProvinceRepository extends PagingAndSortingRepository<DeputyProvince, Integer> {
+public interface DeputyProvinceRepository extends PagingAndSortingRepository<ConfigProvince, Integer> {
 }

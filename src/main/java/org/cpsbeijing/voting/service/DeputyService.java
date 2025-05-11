@@ -1,7 +1,7 @@
 package org.cpsbeijing.voting.service;
 
 import org.cpsbeijing.voting.common.PagingConfig;
-import org.cpsbeijing.voting.entity.DeputyProvince;
+import org.cpsbeijing.voting.entity.ConfigProvince;
 import org.cpsbeijing.voting.repository.DeputyProvinceRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -21,7 +21,7 @@ public class DeputyService {
         this.deputyProvinceRepository = deputyProvinceRepository;
     }
 
-    public Page<DeputyProvince> getDeputyProvinceForPage(PagingConfig pagingConfig) {
+    public Page<ConfigProvince> getDeputyProvinceForPage(PagingConfig pagingConfig) {
         String direction = Optional.ofNullable(pagingConfig.getDirection()).orElse("desc");
         String sortField = Optional.ofNullable(pagingConfig.getSortField()).orElse("provinceCode");
         Sort sort = Sort.by(Sort.Direction.fromString(direction), sortField);

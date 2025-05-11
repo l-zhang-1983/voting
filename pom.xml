@@ -61,6 +61,11 @@
 			<artifactId>druid-spring-boot-starter</artifactId>
 			<version>1.2.18</version> <!-- 最新版本 -->
 		</dependency>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>1.18.38</version>
+		</dependency>
 
 	</dependencies>
 
