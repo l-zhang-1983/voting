@@ -7,6 +7,6 @@ $ curl -X POST 127.0.0.1:8080/common/getProvinceForPage \
 ```shell
 curl -X POST 127.0.0.1:8080/common/getProvince \
   -H "Content-Type: application/json" \
-  -d '{"pagingConfig": {"page": 1, "size": 5}, "param": {}}' \
+  -d '{"pagingConfig": null, "param": {}}' \
   -w '\n' | jq
 ```
