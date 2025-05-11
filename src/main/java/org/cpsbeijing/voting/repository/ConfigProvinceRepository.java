@@ -5,5 +5,6 @@ import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface DeputyProvinceRepository extends PagingAndSortingRepository<ConfigProvince, Integer> {
+public interface ConfigProvinceRepository extends PagingAndSortingRepository<ConfigProvince, Integer> {
+    Iterable<ConfigProvince> findByProvinceCode(Integer provinceCode);
 }
