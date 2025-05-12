@@ -2,18 +2,12 @@ package org.cpsbeijing.voting.controller;
 
 import org.cpsbeijing.voting.common.Request;
 import org.cpsbeijing.voting.common.Response;
-import org.cpsbeijing.voting.entity.BallotInfo;
 import org.cpsbeijing.voting.pojo.BallotContents;
-import org.cpsbeijing.voting.pojo.BallotItem;
 import org.cpsbeijing.voting.service.CollectService;
 import org.cpsbeijing.voting.service.CommonService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
 
 @Controller
 @RequestMapping("/collect")
@@ -54,13 +48,20 @@ public class CollectController {
     public Response<String> saveOrUpdateBallot(@RequestBody Request<BallotContents> request) {
         Response<String> response = new Response<>();
         BallotContents ballotContents = request.getParam();
-        Integer serialNo = ballotContents.getSerialNo();
-        if (this.collectService.hasDuplicatedBallotSerialNo(serialNo)) {
-            response.setSuccess(Boolean.FALSE);
-            response.setResponseMessage("Duplicated Ballot Serial No: " + serialNo);
+        Integer ballotId = ballotContents.getBallotId();
+        if (ballotId == null) {
+            // 不存在 ballotId 即为页面首次录入的新选票内容
+            // 直接保存完整选票内容
+            Integer serialNo = ballotContents.getSerialNo();
+            if (this.collectService.hasDuplicatedBallotSerialNo(serialNo)) {
+                response.setSuccess(Boolean.FALSE);
+                response.setResponseMessage("Duplicated Ballot Serial No: " + serialNo);
+            }
         } else {
-            BallotContents ballotInfo = this.collectService.saveOrUpdateBallot(ballotContents);
+            // 存在 ballotId 即为页面修改现有的选票内容
         }
+        BallotContents ballotInfo = this.collectService.saveBallot(ballotContents);
+
         return response;
     }
 }

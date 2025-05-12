@@ -9,6 +9,7 @@ import org.cpsbeijing.voting.repository.CustomizedRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
@@ -67,14 +68,27 @@ public class CollectService {
 
     // 根据 serialNo 获取选票信息
     public BallotInfo getBallotInfo(Integer serialNo) {
-        return this.ballotInfoRepository.findBySerialNumber(serialNo);
+        return this.ballotInfoRepository.findBySerialNo(serialNo);
     }
 
-    // 根据页面录入的选票内容 保存或者更新选票内容 [选票信息 + 选票明细]
-    public BallotContents saveOrUpdateBallot(BallotContents ballotContents) {
+    // 保存页面首次录入的新选票内容 [选票信息 + 选票明细]
+    @Transactional
+    public BallotContents saveBallot(BallotContents ballotContents) {
         Integer serialNo = ballotContents.getSerialNo();
-        BallotInfo ballotInfo = this.ballotInfoRepository.findBySerialNumber(serialNo);
+        // 保存页面录入的选票信息
+
+        // 更新选票中的统计信息
         return ballotContents;
+    }
+
+    // 更新页面再次录入的现有选票内容 [选票信息 + 选票明细]
+    @Transactional
+    public BallotContents updateBallot(BallotContents ballotContents) {
+        // 删除现有的选票内容
+
+        // 保存新的选票内容
+        BallotContents updatedBallotContents = this.saveBallot(ballotContents);
+        return updatedBallotContents;
     }
 
 }
