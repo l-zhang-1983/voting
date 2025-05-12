@@ -2,7 +2,9 @@ package org.cpsbeijing.voting.controller;
 
 import org.cpsbeijing.voting.common.Request;
 import org.cpsbeijing.voting.common.Response;
+import org.cpsbeijing.voting.entity.BallotInfo;
 import org.cpsbeijing.voting.pojo.BallotContents;
+import org.cpsbeijing.voting.pojo.BallotItem;
 import org.cpsbeijing.voting.service.CollectService;
 import org.cpsbeijing.voting.service.CommonService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -49,9 +51,16 @@ public class CollectController {
 
     @PostMapping("/saveBallot")
     @ResponseBody
-    public Response<String> saveBallot(@RequestBody Request<BallotContents> request) {
+    public Response<String> saveOrUpdateBallot(@RequestBody Request<BallotContents> request) {
         Response<String> response = new Response<>();
-        BallotContents param = request.getParam();
+        BallotContents ballotContents = request.getParam();
+        Integer serialNo = ballotContents.getSerialNo();
+        if (this.collectService.hasDuplicatedBallotSerialNo(serialNo)) {
+            response.setSuccess(Boolean.FALSE);
+            response.setResponseMessage("Duplicated Ballot Serial No: " + serialNo);
+        } else {
+            BallotContents ballotInfo = this.collectService.saveOrUpdateBallot(ballotContents);
+        }
         return response;
     }
 }
