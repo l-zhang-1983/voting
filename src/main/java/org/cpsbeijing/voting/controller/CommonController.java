@@ -1,5 +1,6 @@
 package org.cpsbeijing.voting.controller;
 
+import org.cpsbeijing.voting.common.PagingRequest;
 import org.cpsbeijing.voting.common.Request;
 import org.cpsbeijing.voting.common.Response;
 import org.cpsbeijing.voting.entity.ConfigProvince;
@@ -28,9 +29,9 @@ public class CommonController {
 
     @PostMapping("/getProvinceForPage")
     @ResponseBody
-    public Response<Page<ConfigProvince>> getProvinceForPage(@RequestBody Request<Map<String, String>> request) {
+    public Response<Page<ConfigProvince>> getProvinceForPage(@RequestBody PagingRequest<Map<String, String>> pagingRequest) {
         Response<Page<ConfigProvince>> response = new Response<>();
-        Page<ConfigProvince> deputyProvincePage = this.commonService.getConfigProvinceForPage(request.getPagingConfig());
+        Page<ConfigProvince> deputyProvincePage = this.commonService.getConfigProvinceForPage(pagingRequest.getPagingConfig());
         response.setData(deputyProvincePage);
         return response;
     }

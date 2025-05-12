@@ -4,11 +4,12 @@ import java.io.Serializable;
 
 public class Request<T> implements Serializable {
     private T param;
-    private PagingConfig pagingConfig;
 
-    public Request(T param, PagingConfig pagingConfig) {
+    public Request() {
+    }
+
+    public Request(T param) {
         this.param = param;
-        this.pagingConfig = pagingConfig;
     }
 
     public T getParam() {
@@ -19,11 +20,4 @@ public class Request<T> implements Serializable {
         this.param = param;
     }
 
-    public PagingConfig getPagingConfig() {
-        return pagingConfig;
-    }
-
-    public void setPagingConfig(PagingConfig pagingConfig) {
-        this.pagingConfig = pagingConfig;
-    }
 }

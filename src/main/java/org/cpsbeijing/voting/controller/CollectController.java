@@ -1,10 +1,17 @@
 package org.cpsbeijing.voting.controller;
 
+import org.cpsbeijing.voting.common.Request;
 import org.cpsbeijing.voting.common.Response;
+import org.cpsbeijing.voting.pojo.BallotContents;
+import org.cpsbeijing.voting.service.CollectService;
 import org.cpsbeijing.voting.service.CommonService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
 @Controller
 @RequestMapping("/collect")
@@ -12,9 +19,16 @@ public class CollectController {
 
     private CommonService commonService;
 
+    private CollectService collectService;
+
     @Autowired
     public void setCommonService(CommonService commonService) {
         this.commonService = commonService;
+    }
+
+    @Autowired
+    public void setCollectService(CollectService collectService) {
+        this.collectService = collectService;
     }
 
     @GetMapping("/example")
@@ -25,6 +39,19 @@ public class CollectController {
         return response;
     }
 
+    @PostMapping("/blankBallot")
+    @ResponseBody
+    public Response<BallotContents> createBlankBallot() {
+        Response<BallotContents> response = new Response<>();
+        response.setData(this.collectService.createBlankBallot());
+        return response;
+    }
 
-
+    @PostMapping("/saveBallot")
+    @ResponseBody
+    public Response<String> saveBallot(@RequestBody Request<BallotContents> request) {
+        Response<String> response = new Response<>();
+        BallotContents param = request.getParam();
+        return response;
+    }
 }
