@@ -91,12 +91,14 @@ public class CollectService {
         }).collect(Collectors.toList());
 
         List<BallotItem> supervisorList
-                = ballotItems.stream().filter(item -> item.getCandidateType() == Constants.CANDIDATE_TYPE_SUPERVISOR)
+                = ballotItems.stream()
+                .filter(item -> item.getCandidateType().compareTo(Constants.CANDIDATE_TYPE_SUPERVISOR) == 0)
                 .collect(Collectors.toList());
         ballotContents.setSupervisorList(supervisorList);
 
         List<BallotItem> directorList
-                = ballotItems.stream().filter(item -> item.getCandidateType() == Constants.CANDIDATE_TYPE_DIRECTOR)
+                = ballotItems.stream()
+                .filter(item -> item.getCandidateType().compareTo(Constants.CANDIDATE_TYPE_DIRECTOR) == 0)
                 .collect(Collectors.toList());
         ballotContents.setDirectorList(directorList);
 
@@ -210,8 +212,7 @@ public class CollectService {
         this.deleteBallotContents(ballotContents.getBallotId(), Boolean.TRUE);
 
         // 保存新的选票内容
-        BallotContents updatedBallotContents = this.saveBallotContents(ballotContents, Boolean.TRUE);
-        return updatedBallotContents;
+        return this.saveBallotContents(ballotContents, Boolean.TRUE);
     }
 
     // 完全删除现有选票内容 [选票信息 + 选票明细]
