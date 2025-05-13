@@ -24,7 +24,7 @@ $ curl -X POST 127.0.0.1:8080/collect/blankBallot \
 ```shell
 $ curl -X POST localhost:8080/collect/saveBallotContents \
     -H "Content-Type: application/json" \
-    -d '{"param": {"serialNo": 102, "supervisorList": [{"candidateId": 1, "candidateType": 0, "checked": 0}, {"candidateId": 5, "candidateType": 0, "checked": 1}, {"candidateId": 8, "candidateType": 0, "checked": 0}], "directorList": [{"candidateId": 10, "candidateType": 1, "checked": 0}, {"candidateId": 1, "candidateType": 1, "checked": 0}, {"candidateId": 20, "candidateType": 1, "checked": 1}]}}' \
+    -d '{"param": {"serialNo": 110, "supervisorList": [{"candidateId": 1, "candidateType": 0, "checked": 0}, {"candidateId": 5, "candidateType": 0, "checked": 1}, {"candidateId": 8, "candidateType": 0, "checked": 0}], "directorList": [{"candidateId": 10, "candidateType": 1, "checked": 0}, {"candidateId": 1, "candidateType": 1, "checked": 0}, {"candidateId": 20, "candidateType": 1, "checked": 1}]}}' \
     -w '\n' | jq | more
 ```
 

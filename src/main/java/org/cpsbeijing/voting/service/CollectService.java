@@ -124,6 +124,10 @@ public class CollectService {
     @Transactional
     public void deleteBallotContents(Integer ballotId, Boolean ipUpdate) {
         BallotInfo ballotInfo = this.getBallotInfoByBallotId(ballotId);
+        if (ballotInfo == null) {
+            return;
+        }
+
         this.ballotDetailsRepository.removeBallotDetailsByBallot(ballotInfo);
         if (!ipUpdate) {
             this.ballotInfoRepository.delete(ballotInfo);
