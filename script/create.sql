@@ -18,8 +18,8 @@ CREATE TABLE ballot_info (
      director_count INTEGER DEFAULT (0) NOT NULL,
      supervisor_exceeded INTEGER DEFAULT (0) NOT NULL,
      director_exceed INTEGER DEFAULT (0),
-     created_at TEXT(32) DEFAULT ('20250101000000000') NOT NULL,
-     updated_at TEXT(32) DEFAULT ('20250101000000000') NOT NULL
+     created_at TEXT(32) DEFAULT ('202501010000000000') NOT NULL,
+     updated_at TEXT(32) DEFAULT ('202501010000000000') NOT NULL
 );
 
 CREATE TABLE ballot_details (

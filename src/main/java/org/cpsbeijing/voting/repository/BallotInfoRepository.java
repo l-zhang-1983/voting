@@ -7,4 +7,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface BallotInfoRepository extends CrudRepository<BallotInfo, Integer> {
     BallotInfo findBySerialNo(Integer serialNo);
+
+    BallotInfo findByBallotId(Integer ballotId);
 }

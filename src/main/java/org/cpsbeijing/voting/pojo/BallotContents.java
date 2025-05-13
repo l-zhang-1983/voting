@@ -2,10 +2,6 @@ package org.cpsbeijing.voting.pojo;
 
 import lombok.Data;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import java.util.List;
-
 @Data
 public class BallotContents {
     private Integer ballotId;
@@ -14,6 +10,7 @@ public class BallotContents {
     private Integer directorCount = 0;
     private Integer supervisorExceeded = 0;
     private Integer directorExceed = 0;
-    private Iterable<BallotItem> ballotItemList;
+    private Iterable<BallotItem> supervisorList;
+    private Iterable<BallotItem> directorList;
     private String createdAt;
 }

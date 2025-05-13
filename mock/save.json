@@ -1,0 +1,39 @@
+{
+  "param": {
+    "serialNo": 105,
+    "supervisorList": [
+      {
+        "candidateId": 1,
+        "candidateType": 0,
+        "checked": 0
+      },
+      {
+        "candidateId": 5,
+        "candidateType": 0,
+        "checked": 1
+      },
+      {
+        "candidateId": 8,
+        "candidateType": 0,
+        "checked": 0
+      }
+    ],
+    "directorList": [
+      {
+        "candidateId": 10,
+        "candidateType": 1,
+        "checked": 0
+      },
+      {
+        "candidateId": 1,
+        "candidateType": 1,
+        "checked": 0
+      },
+      {
+        "candidateId": 20,
+        "candidateType": 1,
+        "checked": 1
+      }
+    ]
+  }
+}

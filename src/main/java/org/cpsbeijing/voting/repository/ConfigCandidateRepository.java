@@ -7,4 +7,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface ConfigCandidateRepository extends CrudRepository<ConfigCandidateInfo, Integer> {
     Iterable<ConfigCandidateInfo> findAllByOrderByCandidateTypeAscCandidateTypeAsc();
+
+    ConfigCandidateInfo findByCandidateId(Integer candidateId);
 }

@@ -43,10 +43,19 @@ public class CollectController {
         return response;
     }
 
-    @PostMapping("/saveBallot")
+    @PostMapping("/getBallotContents")
     @ResponseBody
-    public Response<String> saveOrUpdateBallot(@RequestBody Request<BallotContents> request) {
-        Response<String> response = new Response<>();
+    public Response<BallotContents> getBallotContents(@RequestBody Request<Integer> request) {
+        Integer ballotId = request.getParam();
+        Response<BallotContents> response = new Response<>();
+        response.setData(this.collectService.getBallotContents(ballotId));
+        return response;
+    }
+
+    @PostMapping("/saveBallotContents")
+    @ResponseBody
+    public Response<BallotContents> saveBallotContents(@RequestBody Request<BallotContents> request) {
+        Response<BallotContents> response = new Response<>();
         BallotContents ballotContents = request.getParam();
         Integer ballotId = ballotContents.getBallotId();
         if (ballotId == null) {
@@ -56,12 +65,26 @@ public class CollectController {
             if (this.collectService.hasDuplicatedBallotSerialNo(serialNo)) {
                 response.setSuccess(Boolean.FALSE);
                 response.setResponseMessage("Duplicated Ballot Serial No: " + serialNo);
+                return response;
+            } else {
+                ballotContents = this.collectService.saveBallotContents(ballotContents, Boolean.FALSE);
             }
         } else {
             // 存在 ballotId 即为页面修改现有的选票内容
+            ballotContents = this.collectService.updateBallotContents(ballotContents);
         }
-        BallotContents ballotInfo = this.collectService.saveBallot(ballotContents);
 
+        response.setData(ballotContents);
+        return response;
+    }
+
+    @PostMapping("/deleteBallotContents")
+    @ResponseBody
+    public Response<Integer> deleteBallotContents(@RequestBody Request<Integer> request) {
+        Response<Integer> response = new Response<>();
+        Integer serialNo = request.getParam();
+        serialNo = this.collectService.deleteBallotContents(serialNo);
+        response.setData(serialNo);
         return response;
     }
 }
