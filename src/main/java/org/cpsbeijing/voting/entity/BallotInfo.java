@@ -37,9 +37,9 @@ public class BallotInfo {
     private Integer directorExceed = 0;
 
     @Column(name = "created_at", nullable = false, length = 32)
-    private String createdAt = "20250101000000000";
+    private String createdAt = "202501010000000000";
 
     @Column(name = "updated_at", nullable = false, length = 32)
-    private String updatedAt = "20250101000000000";
+    private String updatedAt = "202501010000000000";
 
 }

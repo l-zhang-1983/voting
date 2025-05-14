@@ -1,7 +1,8 @@
+
 ```shell
 $ curl -X POST localhost:8080/common/getProvinceForPage \
     -H "Content-Type: application/json" \
-    -d '{"pagingConfig": {"page": 1, "size": 5}, "param": {}}' \
+    -d '{"pagingConfig": {"page": 0, "size": 5}, "param": {}}' \
     -w '\n' | jq
 ```
 
@@ -12,11 +13,11 @@ $ curl -X POST localhost:8080/common/getProvince \
     -w '\n' | jq
 ```
 
-- blankBallot
+- ballotListForPage
 ```shell
-$ curl -X POST 127.0.0.1:8080/collect/blankBallot \
+$ curl -X POST 127.0.0.1:8080/collect/ballotList \
     -H "Content-Type: application/json" \
-    -d '{"param": {}}' \
+    -d '{"pagingConfig": {"page": 0, "size": 5}, "param": {}}' \
     -w '\n' | jq
 ```
 
@@ -59,3 +60,4 @@ $ curl -X POST localhost:8080/collect/deleteBallotContents \
     -d '{"param": 105}' \
     -w '\n' | jq | more
 ```
+

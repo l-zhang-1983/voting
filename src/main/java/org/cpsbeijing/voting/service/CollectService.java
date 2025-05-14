@@ -1,9 +1,11 @@
 package org.cpsbeijing.voting.service;
 
 import org.cpsbeijing.voting.common.Constants;
+import org.cpsbeijing.voting.common.PagingConfig;
 import org.cpsbeijing.voting.entity.BallotDetails;
 import org.cpsbeijing.voting.entity.BallotInfo;
 import org.cpsbeijing.voting.entity.ConfigCandidateInfo;
+import org.cpsbeijing.voting.entity.ConfigProvince;
 import org.cpsbeijing.voting.pojo.BallotContents;
 import org.cpsbeijing.voting.pojo.BallotItem;
 import org.cpsbeijing.voting.repository.BallotDetailsRepository;
@@ -11,6 +13,10 @@ import org.cpsbeijing.voting.repository.BallotInfoRepository;
 import org.cpsbeijing.voting.repository.ConfigCandidateRepository;
 import org.cpsbeijing.voting.repository.CustomizedRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -20,6 +26,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -52,6 +59,14 @@ public class CollectService {
     @Autowired
     public void setBallotDetailsRepository(BallotDetailsRepository ballotDetailsRepository) {
         this.ballotDetailsRepository = ballotDetailsRepository;
+    }
+
+    public Page<BallotInfo> getBallotInfoForPage(PagingConfig pagingConfig) {
+        String direction = Optional.ofNullable(pagingConfig.getDirection()).orElse("asc");
+        String sortField = Optional.ofNullable(pagingConfig.getSortField()).orElse("ballotId");
+        Sort sort = Sort.by(Sort.Direction.fromString(direction), sortField);
+        Pageable pageable = PageRequest.of(pagingConfig.getPage(), pagingConfig.getSize(), sort);
+        return ballotInfoRepository.findAll(pageable);
     }
 
     // 创建新的空选票内容

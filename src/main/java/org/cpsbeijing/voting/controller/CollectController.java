@@ -1,13 +1,18 @@
 package org.cpsbeijing.voting.controller;
 
+import org.cpsbeijing.voting.common.PagingRequest;
 import org.cpsbeijing.voting.common.Request;
 import org.cpsbeijing.voting.common.Response;
+import org.cpsbeijing.voting.entity.BallotInfo;
 import org.cpsbeijing.voting.pojo.BallotContents;
 import org.cpsbeijing.voting.service.CollectService;
 import org.cpsbeijing.voting.service.CommonService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.Map;
 
 @Controller
 @RequestMapping("/collect")
@@ -32,6 +37,15 @@ public class CollectController {
     public Response<String> example(@RequestParam(name = "param", required = false) String param) {
         Response<String> response = new Response<>();
         response.setData("Example Result: [" + param + "]");
+        return response;
+    }
+
+    @PostMapping("/ballotList")
+    @ResponseBody
+    public Response<Page<BallotInfo>> ballotList(@RequestBody PagingRequest<Map<String, String>> pagingRequest) {
+        Response<Page<BallotInfo>> response = new Response<>();
+        Page<BallotInfo> ballotInfoList = this.collectService.getBallotInfoForPage(pagingRequest.getPagingConfig());
+        response.setData(ballotInfoList);
         return response;
     }
 
