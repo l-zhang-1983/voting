@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8" />
+  <title>Bootstrap 5 每行8个checkbox示例</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <style>
+    .tag-btn {
+      margin: 2px;
+    }
+    .col-8-centered {
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .form-check-label {
+      user-select: none;
+    }
+  </style>
+</head>
+<body class="p-4">
+
+<button class="btn btn-primary" onclick="openModal()">打开投票模态框</button>
+
+<div class="modal fade" id="voteModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h5 class="modal-title">候选人投票</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="关闭"></button>
+      </div>
+
+      <div class="modal-body">
+        <!-- 监事候选人 -->
+        <div class="row mb-3">
+          <div class="col-8 col-8-centered">
+            <h6>监事候选人（已选中：<span id="count-supervisor">0</span>）</h6>
+            <div id="supervisorList" class="row row-cols-8 g-2"></div>
+          </div>
+        </div>
+
+        <!-- 董事候选人 -->
+        <div class="row mb-3">
+          <div class="col-8 col-8-centered">
+            <h6>董事候选人（已选中：<span id="count-director">0</span>）</h6>
+            <div id="directorList" class="row row-cols-8 g-2"></div>
+          </div>
+        </div>
+
+        <hr />
+
+        <!-- 额外添加项 -->
+        <div class="row mb-3">
+          <div class="col-8 col-8-centered">
+            <h6>额外添加项（最多 3 个，已添加：<span id="extra-count">0</span>）</h6>
+            <div class="input-group mb-2">
+              <select id="extraType" class="form-select w-auto">
+                <option value="0">监事</option>
+                <option value="1">董事</option>
+              </select>
+              <input type="text" id="extraInput" class="form-control" placeholder="输入姓名" />
+              <button class="btn btn-outline-secondary" onclick="addExtraItem()">添加</button>
+            </div>
+            <div id="extraItems" class="mb-2"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn btn-primary" onclick="submitVote()">提交</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const MAX_EXTRA = 3;
+  let modalInstance;
+
+  function openModal() {
+    // 清空旧数据和计数
+    ['supervisorList', 'directorList', 'extraItems'].forEach(id => {
+      document.getElementById(id).innerHTML = '';
+    });
+    ['count-supervisor', 'count-director', 'extra-count'].forEach(id => {
+      document.getElementById(id).textContent = '0';
+    });
+    document.getElementById('extraInput').value = '';
+
+    // 模拟数据（替换成你实际接口）
+    const data = {
+      supervisorList: [
+        { candidateId: 1, candidateName: '监事甲', checked: true },
+        { candidateId: 2, candidateName: '监事乙', checked: false },
+        { candidateId: 3, candidateName: '监事丙', checked: false },
+        { candidateId: 4, candidateName: '监事丁', checked: false },
+        { candidateId: 5, candidateName: '监事戊', checked: false },
+        { candidateId: 6, candidateName: '监事己', checked: false },
+        { candidateId: 7, candidateName: '监事庚', checked: false },
+        { candidateId: 8, candidateName: '监事辛', checked: false },
+        { candidateId: 9, candidateName: '监事壬', checked: false },
+        { candidateId: 10, candidateName: '监事癸', checked: false }
+      ],
+      directorList: [
+        { candidateId: 11, candidateName: '董事甲', checked: true },
+        { candidateId: 12, candidateName: '董事乙', checked: false },
+        { candidateId: 13, candidateName: '董事丙', checked: false },
+        { candidateId: 14, candidateName: '董事丁', checked: false },
+        { candidateId: 15, candidateName: '董事戊', checked: false },
+        { candidateId: 16, candidateName: '董事己', checked: false },
+        { candidateId: 17, candidateName: '董事庚', checked: false },
+        { candidateId: 18, candidateName: '董事辛', checked: false }
+      ],
+      extraItem: []
+    };
+
+    renderModal(data);
+
+    modalInstance = bootstrap.Modal.getOrCreateInstance(document.getElementById('voteModal'));
+    modalInstance.show();
+  }
+
+  function renderModal(data) {
+    data.supervisorList.forEach(item => {
+      const col = createCheckbox(item, 'supervisor');
+      document.getElementById('supervisorList').appendChild(col);
+    });
+    data.directorList.forEach(item => {
+      const col = createCheckbox(item, 'director');
+      document.getElementById('directorList').appendChild(col);
+    });
+    data.extraItem.forEach(item => addExtraTag(item.candidateName, item.candidateType));
+    updateAllCounts();
+  }
+
+  function createCheckbox(item, group) {
+    const col = document.createElement('div');
+    col.className = 'col'; // 关键：必须有 col 类
+
+    const input = document.createElement('input');
+    input.type = 'checkbox';
+    input.className = 'form-check-input me-2';
+    input.id = `${group}_${item.candidateId}`;
+    input.value = item.candidateId;
+    input.checked = item.checked === true;
+    input.dataset.group = group;
+    input.dataset.name = item.candidateName;
+    input.addEventListener('change', updateAllCounts);
+
+    const label = document.createElement('label');
+    label.className = 'form-check-label';
+    label.htmlFor = input.id;
+    label.innerText = item.candidateName;
+
+    const wrapper = document.createElement('div');
+    wrapper.className = 'form-check';
+    wrapper.appendChild(input);
+    wrapper.appendChild(label);
+
+    col.appendChild(wrapper);
+    return col;
+  }
+
+  function updateAllCounts() {
+    const s = document.querySelectorAll('#supervisorList input:checked').length;
+    const d = document.querySelectorAll('#directorList input:checked').length;
+    const e = document.querySelectorAll('#extraItems .tag-btn').length;
+    document.getElementById('count-supervisor').textContent = s;
+    document.getElementById('count-director').textContent = d;
+    document.getElementById('extra-count').textContent = e;
+  }
+
+  function addExtraItem() {
+    const name = document.getElementById('extraInput').value.trim();
+    const type = document.getElementById('extraType').value;
+    const count = document.querySelectorAll('#extraItems .tag-btn').length;
+    if (!name) {
+      alert('请输入姓名');
+      return;
+    }
+    if (count >= MAX_EXTRA) {
+      alert(`最多只能添加 ${MAX_EXTRA} 项`);
+      return;
+    }
+
+    addExtraTag(name, type);
+    document.getElementById('extraInput').value = '';
+    updateAllCounts();
+  }
+
+  function addExtraTag(name, type) {
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'btn btn-sm btn-outline-primary tag-btn';
+    btn.textContent = name + (type == 0 ? '（监事）' : '（董事）');
+    btn.dataset.name = name;
+    btn.dataset.type = type;
+    btn.onclick = () => {
+      btn.remove();
+      updateAllCounts();
+    };
+    document.getElementById('extraItems').appendChild(btn);
+  }
+
+  function submitVote() {
+    const selected = [];
+    document.querySelectorAll('#supervisorList input:checked, #directorList input:checked').forEach(cb => {
+      selected.push({
+        candidateId: +cb.value,
+        candidateName: cb.dataset.name,
+        candidateType: cb.dataset.group === 'supervisor' ? 0 : 1,
+      });
+    });
+    document.querySelectorAll('#extraItems .tag-btn').forEach(btn => {
+      selected.push({
+        candidateId: null,
+        candidateName: btn.dataset.name,
+        candidateType: +btn.dataset.type,
+      });
+    });
+
+    console.log('提交数据：', selected);
+    alert('提交成功！控制台查看数据。');
+    modalInstance.hide();
+  }
+</script>
+</body>
+</html>

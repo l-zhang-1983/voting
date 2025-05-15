@@ -8,6 +8,7 @@
     <link href="bootstrap-5.3.6/font/bootstrap-icons.min.css" rel="stylesheet" crossorigin="anonymous">
     <link href="bootstrap-tables/bootstrap-table.min.css" rel="stylesheet" crossorigin="anonymous">
     <link href="bootstrap-dialog/bootstrap-dialog.min.css" rel="stylesheet" crossorigin="anonymous">
+    <link href="css/common.css" rel="stylesheet" crossorigin="anonymous">
 </head>
 <body>
 <div class="container mt-5">
@@ -33,31 +34,24 @@
 </div>
 
 <div class="modal fade" id="myModal" tabindex="-1" data-bs-backdrop="static">
-    <div class="modal-dialog modal-xl modal-dialog-scrollable">
+    <div class="modal-dialog modal-extra-wide modal-dialog-scrollable">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">选择项目</h5>
+                <h5 class="modal-title">选择项目
+                <br>监事候选人预备人选/理事候选人预备人选/额外人员已选中：<span id="countSupervisor">0</span>/<span id="countDirector">0</span>/<span id="countExtra">0</span>个</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
             </div>
             <div class="modal-body">
                 <div>
-                    <h6>监事候选人预备人选（已选中：<span id="countSupervisor">0</span>）</h6>
+                    <h6>监事候选人预备人选</h6>
                     <div id="groupSupervisor" class="row mb-3"></div>
                 </div>
                 <div>
-                    <h6>理事候选人预备人选（已选中：<span id="countDirector">0</span>）</h6>
+                    <h6>理事候选人预备人选</h6>
                     <div id="groupDirector" class="row mb-3"></div>
                 </div>
-<!--                <div class="mb-3">-->
-<!--                    <h6>额外候选人（已选中：<span id="countExtra">0</span>，最多 3 个）</h6>-->
-<!--                    <div class="input-group mb-2">-->
-<!--                        <input type="text" id="extraInput" class="form-control" placeholder="输入项名称">-->
-<!--                        <button type="button" class="btn btn-outline-secondary" onclick="addExtraItem()">添加</button>-->
-<!--                    </div>-->
-<!--                    <div id="extraItems" class="row mb-3"></div>-->
-<!--                </div>-->
                 <div class="row g-2 mb-2">
-                    <h6>额外候选人（已选中：<span id="countExtra">0</span>，最多 3 个）</h6>
+                    <h6>额外候选人（最多 3 个）</h6>
                     <div class="col-6">
                         <input type="text" id="extraInput" class="form-control" placeholder="输入项名称">
                     </div>

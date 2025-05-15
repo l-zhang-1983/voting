@@ -1,0 +1,225 @@
+{
+  "ballotId": null,
+  "serialNo": null,
+  "supervisorCount": 0,
+  "directorCount": 0,
+  "supervisorExceeded": 0,
+  "directorExceed": 0,
+  "supervisorList": [
+    {
+      "candidateId": 1,
+      "candidateName": "第三方",
+      "candidateType": 0,
+      "provinceCode": 220,
+      "checked": 1
+    },
+    {
+      "candidateId": 2,
+      "candidateName": "发儿童",
+      "candidateType": 0,
+      "provinceCode": 610,
+      "checked": 1
+    },
+    {
+      "candidateId": 3,
+      "candidateName": "士大夫",
+      "candidateType": 0,
+      "provinceCode": 310,
+      "checked": 0
+    },
+    {
+      "candidateId": 4,
+      "candidateName": "个vfdds",
+      "candidateType": 0,
+      "provinceCode": 130,
+      "checked": 1
+    },
+    {
+      "candidateId": 5,
+      "candidateName": "ewec但是",
+      "candidateType": 0,
+      "provinceCode": 530,
+      "checked": 0
+    },
+    {
+      "candidateId": 6,
+      "candidateName": "格但斯克",
+      "candidateType": 0,
+      "provinceCode": 110,
+      "checked": 0
+    },
+    {
+      "candidateId": 7,
+      "candidateName": "挖去然而",
+      "candidateType": 0,
+      "provinceCode": 410,
+      "checked": 1
+    },
+    {
+      "candidateId": 8,
+      "candidateName": "回忆突然",
+      "candidateType": 0,
+      "provinceCode": 370,
+      "checked": 0
+    },
+    {
+      "candidateId": 9,
+      "candidateName": "额外千千万",
+      "provinceCode": 120,
+      "checked": 0
+    },
+    {
+      "candidateId": 10,
+      "candidateName": "二七区",
+      "provinceCode": 310,
+      "checked": 0
+    },
+    {
+      "candidateId": 11,
+      "candidateName": "轻武器",
+      "provinceCode": 310,
+      "checked": 0
+    }],
+  "directorList": [
+    {
+      "candidateId": 12,
+      "candidateName": "urte",
+      "provinceCode": 110,
+      "checked": 0
+    },
+    {
+      "candidateId": 13,
+      "candidateName": "请传递",
+      "provinceCode": 500,
+      "checked": 0
+    },
+    {
+      "candidateId": 14,
+      "candidateName": "哦哦但是",
+      "provinceCode": 510,
+      "checked": 0
+    },
+    {
+      "candidateId": 15,
+      "candidateName": "帮我请",
+      "provinceCode": 330,
+      "checked": 0
+    },
+    {
+      "candidateId": 16,
+      "candidateName": "坡度撒",
+      "provinceCode": 440,
+      "checked": 0
+    },
+    {
+      "candidateId": 17,
+      "candidateName": "我是qf",
+      "provinceCode": 440,
+      "checked": 0
+    },
+    {
+      "candidateId": 18,
+      "candidateName": "怕ue",
+      "provinceCode": 320,
+      "checked": 0
+    },
+    {
+      "candidateId": 19,
+      "candidateName": "偶请问",
+      "provinceCode": 110,
+      "checked": 0
+    },
+    {
+      "candidateId": 20,
+      "candidateName": "啊vdft",
+      "provinceCode": 110,
+      "checked": 0
+    },
+    {
+      "candidateId": 21,
+      "candidateName": "拍拍手",
+      "provinceCode": 520,
+      "checked": 1
+    },
+    {
+      "candidateId": 22,
+      "candidateName": "起跑点",
+      "provinceCode": 320,
+      "checked": 0
+    },
+    {
+      "candidateId": 23,
+      "candidateName": "害怕我",
+      "provinceCode": 430,
+      "checked": 0
+    },
+    {
+      "candidateId": 24,
+      "candidateName": "丁其次",
+      "provinceCode": 620,
+      "checked": 0
+    },
+    {
+      "candidateId": 25,
+      "candidateName": "坡度撒",
+      "provinceCode": 440,
+      "checked": 0
+    },
+    {
+      "candidateId": 26,
+      "candidateName": "偶的话",
+      "provinceCode": 360,
+      "checked": 0
+    },
+    {
+      "candidateId": 27,
+      "candidateName": "挖去波",
+      "provinceCode": 210,
+      "checked": 0
+    },
+    {
+      "candidateId": 28,
+      "candidateName": "缸瓦",
+      "provinceCode": 440,
+      "checked": 0
+    },
+    {
+      "candidateId": 29,
+      "candidateName": "精确的",
+      "provinceCode": 110,
+      "checked": 0
+    },
+    {
+      "candidateId": 30,
+      "candidateName": "认识到",
+      "provinceCode": 110,
+      "checked": 0
+    },
+    {
+      "candidateId": 31,
+      "candidateName": "ijs",
+      "provinceCode": 210,
+      "checked": 0
+    },
+    {
+      "candidateId": 32,
+      "candidateName": "恩典",
+      "provinceCode": 110,
+      "checked": 0
+    },
+    {
+      "candidateId": 33,
+      "candidateName": "矮树丛",
+      "provinceCode": 110,
+      "checked": 0
+    }],
+  "extraItem": [
+    {
+      "candidateType": 0,
+      "candidateName": "啊啊啊"
+    }, {
+      "candidateType": 1,
+      "candidateName": "我是谁"
+    }
+  ]
+}
