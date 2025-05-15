@@ -1,0 +1,1544 @@
+{
+  "ballotId": null,
+  "serialNo": null,
+  "supervisorCount": 0,
+  "directorCount": 0,
+  "supervisorExceeded": 0,
+  "directorExceed": 0,
+  "supervisorList": [
+    {
+      "candidateId": 1,
+      "candidateName": "刘晓明",
+      "candidateType": 0,
+      "provinceCode": 220,
+      "provinceName": null,
+      "checked": 1
+    },
+    {
+      "candidateId": 2,
+      "candidateName": "苗丹民",
+      "candidateType": 0,
+      "provinceCode": 610,
+      "provinceName": null,
+      "checked": 1
+    },
+    {
+      "candidateId": 3,
+      "candidateName": "石文典",
+      "candidateType": 0,
+      "provinceCode": 310,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 4,
+      "candidateName": "宋耀武",
+      "candidateType": 0,
+      "provinceCode": 130,
+      "provinceName": null,
+      "checked": 1
+    },
+    {
+      "candidateId": 5,
+      "candidateName": "陶云",
+      "candidateType": 0,
+      "provinceCode": 530,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 6,
+      "candidateName": "许燕",
+      "candidateType": 0,
+      "provinceCode": 110,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 7,
+      "candidateName": "赵俊峰",
+      "candidateType": 0,
+      "provinceCode": 410,
+      "provinceName": null,
+      "checked": 1
+    },
+    {
+      "candidateId": 8,
+      "candidateName": "朱莉琪",
+      "candidateType": 0,
+      "provinceCode": 370,
+      "provinceName": null,
+      "checked": 0
+    }
+  ],
+  "directorList": [
+    {
+      "candidateId": 9,
+      "candidateName": "白学军",
+      "candidateType": 1,
+      "provinceCode": 120,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 10,
+      "candidateName": "蔡丹",
+      "candidateType": 1,
+      "provinceCode": 310,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 11,
+      "candidateName": "陈安涛",
+      "candidateType": 1,
+      "provinceCode": 310,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 12,
+      "candidateName": "陈楚侨",
+      "candidateType": 1,
+      "provinceCode": 110,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 13,
+      "candidateName": "陈红",
+      "candidateType": 1,
+      "provinceCode": 500,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 14,
+      "candidateName": "陈华",
+      "candidateType": 1,
+      "provinceCode": 510,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 15,
+      "candidateName": "陈辉",
+      "candidateType": 1,
+      "provinceCode": 330,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 16,
+      "candidateName": "陈骐",
+      "candidateType": 1,
+      "provinceCode": 440,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 17,
+      "candidateName": "陈琦",
+      "candidateType": 1,
+      "provinceCode": 440,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 18,
+      "candidateName": "陈庆荣",
+      "candidateType": 1,
+      "provinceCode": 320,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 19,
+      "candidateName": "陈雪峰",
+      "candidateType": 1,
+      "provinceCode": 110,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 20,
+      "candidateName": "陈英和",
+      "candidateType": 1,
+      "provinceCode": 110,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 21,
+      "candidateName": "程刚",
+      "candidateType": 1,
+      "provinceCode": 520,
+      "provinceName": null,
+      "checked": 1
+    },
+    {
+      "candidateId": 22,
+      "candidateName": "邓铸",
+      "candidateType": 1,
+      "provinceCode": 320,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 23,
+      "candidateName": "丁道群",
+      "candidateType": 1,
+      "provinceCode": 430,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 24,
+      "candidateName": "丁小斌",
+      "candidateType": 1,
+      "provinceCode": 620,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 25,
+      "candidateName": "丁晓伟",
+      "candidateType": 1,
+      "provinceCode": 440,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 26,
+      "candidateName": "董圣鸿",
+      "candidateType": 1,
+      "provinceCode": 360,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 27,
+      "candidateName": "窦广波",
+      "candidateType": 1,
+      "provinceCode": 210,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 28,
+      "candidateName": "窦凯",
+      "candidateType": 1,
+      "provinceCode": 440,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 29,
+      "candidateName": "杜峰",
+      "candidateType": 1,
+      "provinceCode": 110,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 30,
+      "candidateName": "杜忆",
+      "candidateType": 1,
+      "provinceCode": 110,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 31,
+      "candidateName": "范会勇",
+      "candidateType": 1,
+      "provinceCode": 210,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 32,
+      "candidateName": "方方",
+      "candidateType": 1,
+      "provinceCode": 110,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 33,
+      "candidateName": "方平",
+      "candidateType": 1,
+      "provinceCode": 110,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 34,
+      "candidateName": "方晓义",
+      "candidateType": 1,
+      "provinceCode": 110,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 35,
+      "candidateName": "冯廷勇",
+      "candidateType": 1,
+      "provinceCode": 500,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 36,
+      "candidateName": "冯文锋",
+      "candidateType": 1,
+      "provinceCode": 320,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 37,
+      "candidateName": "冯正直",
+      "candidateType": 1,
+      "provinceCode": 500,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 38,
+      "candidateName": "伏干",
+      "candidateType": 1,
+      "provinceCode": 320,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 39,
+      "candidateName": "傅小兰",
+      "candidateType": 1,
+      "provinceCode": 310,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 40,
+      "candidateName": "盖笑松",
+      "candidateType": 1,
+      "provinceCode": 220,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 41,
+      "candidateName": "甘怡群",
+      "candidateType": 1,
+      "provinceCode": 110,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 42,
+      "candidateName": "高定国",
+      "candidateType": 1,
+      "provinceCode": 440,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 43,
+      "candidateName": "高峰强",
+      "candidateType": 1,
+      "provinceCode": 370,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 44,
+      "candidateName": "高申春",
+      "candidateType": 1,
+      "provinceCode": 220,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 45,
+      "candidateName": "郭本禹",
+      "candidateType": 1,
+      "provinceCode": 320,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 46,
+      "candidateName": "郭春彦",
+      "candidateType": 1,
+      "provinceCode": 110,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 47,
+      "candidateName": "郭秀艳",
+      "candidateType": 1,
+      "provinceCode": 310,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 48,
+      "candidateName": "郭永玉",
+      "candidateType": 1,
+      "provinceCode": 320,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 49,
+      "candidateName": "韩布新",
+      "candidateType": 1,
+      "provinceCode": 110,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 50,
+      "candidateName": "郝宁",
+      "candidateType": 1,
+      "provinceCode": 310,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 51,
+      "candidateName": "何安明",
+      "candidateType": 1,
+      "provinceCode": 410,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 52,
+      "candidateName": "何贵兵",
+      "candidateType": 1,
+      "provinceCode": 330,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 53,
+      "candidateName": "何清华",
+      "candidateType": 1,
+      "provinceCode": 500,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 54,
+      "candidateName": "何文广",
+      "candidateType": 1,
+      "provinceCode": 370,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 55,
+      "candidateName": "何先友",
+      "candidateType": 1,
+      "provinceCode": 440,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 56,
+      "candidateName": "何晓丽",
+      "candidateType": 1,
+      "provinceCode": 640,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 57,
+      "candidateName": "侯玉波",
+      "candidateType": 1,
+      "provinceCode": 110,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 58,
+      "candidateName": "胡金生",
+      "candidateType": 1,
+      "provinceCode": 210,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 59,
+      "candidateName": "胡理",
+      "candidateType": 1,
+      "provinceCode": 110,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 60,
+      "candidateName": "胡平",
+      "candidateType": 1,
+      "provinceCode": 110,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 61,
+      "candidateName": "胡瑜",
+      "candidateType": 1,
+      "provinceCode": 330,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 62,
+      "candidateName": "姬鸣",
+      "candidateType": 1,
+      "provinceCode": 610,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 63,
+      "candidateName": "贾林祥",
+      "candidateType": 1,
+      "provinceCode": 320,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 64,
+      "candidateName": "贾宁",
+      "candidateType": 1,
+      "provinceCode": 130,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 65,
+      "candidateName": "贾晓明",
+      "candidateType": 1,
+      "provinceCode": 110,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 66,
+      "candidateName": "蒋毅",
+      "candidateType": 1,
+      "provinceCode": 110,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 67,
+      "candidateName": "金花",
+      "candidateType": 1,
+      "provinceCode": 120,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 68,
+      "candidateName": "雷雳",
+      "candidateType": 1,
+      "provinceCode": 110,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 69,
+      "candidateName": "雷旭",
+      "candidateType": 1,
+      "provinceCode": 500,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 70,
+      "candidateName": "雷怡",
+      "candidateType": 1,
+      "provinceCode": 510,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 71,
+      "candidateName": "冷英",
+      "candidateType": 1,
+      "provinceCode": 320,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 72,
+      "candidateName": "李丹",
+      "candidateType": 1,
+      "provinceCode": 310,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 73,
+      "candidateName": "李红",
+      "candidateType": 1,
+      "provinceCode": 440,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 74,
+      "candidateName": "李美华",
+      "candidateType": 1,
+      "provinceCode": 630,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 75,
+      "candidateName": "李鸣",
+      "candidateType": 1,
+      "provinceCode": 320,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 76,
+      "candidateName": "李强",
+      "candidateType": 1,
+      "provinceCode": 120,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 77,
+      "candidateName": "李寿欣",
+      "candidateType": 1,
+      "provinceCode": 370,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 78,
+      "candidateName": "李伟健",
+      "candidateType": 1,
+      "provinceCode": 330,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 79,
+      "candidateName": "李卫东",
+      "candidateType": 1,
+      "provinceCode": 310,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 80,
+      "candidateName": "李先春",
+      "candidateType": 1,
+      "provinceCode": 310,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 81,
+      "candidateName": "李永娟",
+      "candidateType": 1,
+      "provinceCode": 110,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 82,
+      "candidateName": "李永鑫",
+      "candidateType": 1,
+      "provinceCode": 410,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 83,
+      "candidateName": "连榕",
+      "candidateType": 1,
+      "provinceCode": 350,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 84,
+      "candidateName": "蔺秀云",
+      "candidateType": 1,
+      "provinceCode": 110,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 85,
+      "candidateName": "刘超",
+      "candidateType": 1,
+      "provinceCode": 110,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 86,
+      "candidateName": "刘慧瀛",
+      "candidateType": 1,
+      "provinceCode": 410,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 87,
+      "candidateName": "刘俊升",
+      "candidateType": 1,
+      "provinceCode": 310,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 88,
+      "candidateName": "刘力",
+      "candidateType": 1,
+      "provinceCode": 110,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 89,
+      "candidateName": "刘文",
+      "candidateType": 1,
+      "provinceCode": 210,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 90,
+      "candidateName": "刘旭峰",
+      "candidateType": 1,
+      "provinceCode": 610,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 91,
+      "candidateName": "刘正奎",
+      "candidateType": 1,
+      "provinceCode": 110,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 92,
+      "candidateName": "柳昀哲",
+      "candidateType": 1,
+      "provinceCode": 110,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 93,
+      "candidateName": "卢雄",
+      "candidateType": 1,
+      "provinceCode": 510,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 94,
+      "candidateName": "陆静怡",
+      "candidateType": 1,
+      "provinceCode": 310,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 95,
+      "candidateName": "栾胜华",
+      "candidateType": 1,
+      "provinceCode": 110,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 96,
+      "candidateName": "罗欢",
+      "candidateType": 1,
+      "provinceCode": 110,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 97,
+      "candidateName": "罗劲",
+      "candidateType": 1,
+      "provinceCode": 110,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 98,
+      "candidateName": "罗俊龙",
+      "candidateType": 1,
+      "provinceCode": 310,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 99,
+      "candidateName": "罗良",
+      "candidateType": 1,
+      "provinceCode": 110,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 100,
+      "candidateName": "罗文波",
+      "candidateType": 1,
+      "provinceCode": 210,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 101,
+      "candidateName": "吕厚超",
+      "candidateType": 1,
+      "provinceCode": 500,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 102,
+      "candidateName": "吕小康",
+      "candidateType": 1,
+      "provinceCode": 120,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 103,
+      "candidateName": "麻超",
+      "candidateType": 1,
+      "provinceCode": 650,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 104,
+      "candidateName": "马海林",
+      "candidateType": 1,
+      "provinceCode": 540,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 105,
+      "candidateName": "马红宇",
+      "candidateType": 1,
+      "provinceCode": 420,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 106,
+      "candidateName": "马向真",
+      "candidateType": 1,
+      "provinceCode": 320,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 107,
+      "candidateName": "马小红",
+      "candidateType": 1,
+      "provinceCode": 510,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 108,
+      "candidateName": "马谐",
+      "candidateType": 1,
+      "provinceCode": 530,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 109,
+      "candidateName": "买合甫来提·坎吉",
+      "candidateType": 1,
+      "provinceCode": 650,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 110,
+      "candidateName": "孟馥",
+      "candidateType": 1,
+      "provinceCode": 310,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 111,
+      "candidateName": "孟迎芳",
+      "candidateType": 1,
+      "provinceCode": 350,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 112,
+      "candidateName": "孟勇",
+      "candidateType": 1,
+      "provinceCode": 410,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 113,
+      "candidateName": "南云",
+      "candidateType": 1,
+      "provinceCode": 110,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 114,
+      "candidateName": "聂衍刚",
+      "candidateType": 1,
+      "provinceCode": 440,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 115,
+      "candidateName": "庞维国",
+      "candidateType": 1,
+      "provinceCode": 310,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 116,
+      "candidateName": "彭运石",
+      "candidateType": 1,
+      "provinceCode": 430,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 117,
+      "candidateName": "乔志宏",
+      "candidateType": 1,
+      "provinceCode": 110,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 118,
+      "candidateName": "秦绍正",
+      "candidateType": 1,
+      "provinceCode": 110,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 119,
+      "candidateName": "任国防",
+      "candidateType": 1,
+      "provinceCode": 410,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 120,
+      "candidateName": "任其平",
+      "candidateType": 1,
+      "provinceCode": 320,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 121,
+      "candidateName": "任志洪",
+      "candidateType": 1,
+      "provinceCode": 420,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 122,
+      "candidateName": "桑青松",
+      "candidateType": 1,
+      "provinceCode": 340,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 123,
+      "candidateName": "沈模卫",
+      "candidateType": 1,
+      "provinceCode": 330,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 124,
+      "candidateName": "司继伟",
+      "candidateType": 1,
+      "provinceCode": 370,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 125,
+      "candidateName": "孙炳海",
+      "candidateType": 1,
+      "provinceCode": 330,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 126,
+      "candidateName": "孙向红",
+      "candidateType": 1,
+      "provinceCode": 110,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 127,
+      "candidateName": "孙晓军",
+      "candidateType": 1,
+      "provinceCode": 420,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 128,
+      "candidateName": "唐芳贵",
+      "candidateType": 1,
+      "provinceCode": 430,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 129,
+      "candidateName": "陶沙",
+      "candidateType": 1,
+      "provinceCode": 110,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 130,
+      "candidateName": "田晓明",
+      "candidateType": 1,
+      "provinceCode": 320,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 131,
+      "candidateName": "涂冬波",
+      "candidateType": 1,
+      "provinceCode": 360,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 132,
+      "candidateName": "王大伟",
+      "candidateType": 1,
+      "provinceCode": 370,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 133,
+      "candidateName": "王海英",
+      "candidateType": 1,
+      "provinceCode": 220,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 134,
+      "candidateName": "王垒",
+      "candidateType": 1,
+      "provinceCode": 110,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 135,
+      "candidateName": "王力",
+      "candidateType": 1,
+      "provinceCode": 110,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 136,
+      "candidateName": "王亮",
+      "candidateType": 1,
+      "provinceCode": 110,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 137,
+      "candidateName": "王明辉",
+      "candidateType": 1,
+      "provinceCode": 410,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 138,
+      "candidateName": "王瑞明",
+      "candidateType": 1,
+      "provinceCode": 440,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 139,
+      "candidateName": "王欣瑜",
+      "candidateType": 1,
+      "provinceCode": 150,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 140,
+      "candidateName": "王兴超",
+      "candidateType": 1,
+      "provinceCode": 140,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 141,
+      "candidateName": "王艳郁",
+      "candidateType": 1,
+      "provinceCode": 370,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 142,
+      "candidateName": "王振宏",
+      "candidateType": 1,
+      "provinceCode": 610,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 143,
+      "candidateName": "王争艳",
+      "candidateType": 1,
+      "provinceCode": 110,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 144,
+      "candidateName": "魏玲",
+      "candidateType": 1,
+      "provinceCode": 350,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 145,
+      "candidateName": "温忠麟",
+      "candidateType": 1,
+      "provinceCode": 440,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 146,
+      "candidateName": "乌云特娜",
+      "candidateType": 1,
+      "provinceCode": 150,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 147,
+      "candidateName": "吴继霞",
+      "candidateType": 1,
+      "provinceCode": 320,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 148,
+      "candidateName": "吴南",
+      "candidateType": 1,
+      "provinceCode": 110,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 149,
+      "candidateName": "吴艳红",
+      "candidateType": 1,
+      "provinceCode": 110,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 150,
+      "candidateName": "伍新春",
+      "candidateType": 1,
+      "provinceCode": 110,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 151,
+      "candidateName": "伍珍",
+      "candidateType": 1,
+      "provinceCode": 110,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 152,
+      "candidateName": "夏明睿",
+      "candidateType": 1,
+      "provinceCode": 110,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 153,
+      "candidateName": "夏瑞雪",
+      "candidateType": 1,
+      "provinceCode": 620,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 154,
+      "candidateName": "肖少北",
+      "candidateType": 1,
+      "provinceCode": 460,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 155,
+      "candidateName": "谢晓非",
+      "candidateType": 1,
+      "provinceCode": 110,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 156,
+      "candidateName": "辛自强",
+      "candidateType": 1,
+      "provinceCode": 110,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 157,
+      "candidateName": "熊建萍",
+      "candidateType": 1,
+      "provinceCode": 410,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 158,
+      "candidateName": "杨国愉",
+      "candidateType": 1,
+      "provinceCode": 500,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 159,
+      "candidateName": "杨海波",
+      "candidateType": 1,
+      "provinceCode": 120,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 160,
+      "candidateName": "杨莉萍",
+      "candidateType": 1,
+      "provinceCode": 320,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 161,
+      "candidateName": "杨文登",
+      "candidateType": 1,
+      "provinceCode": 440,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 162,
+      "candidateName": "姚本先",
+      "candidateType": 1,
+      "provinceCode": 340,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 163,
+      "candidateName": "游旭群",
+      "candidateType": 1,
+      "provinceCode": 610,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 164,
+      "candidateName": "袁立壮",
+      "candidateType": 1,
+      "provinceCode": 130,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 165,
+      "candidateName": "臧玉峰",
+      "candidateType": 1,
+      "provinceCode": 330,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 166,
+      "candidateName": "曾晓青",
+      "candidateType": 1,
+      "provinceCode": 360,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 167,
+      "candidateName": "张丹",
+      "candidateType": 1,
+      "provinceCode": 110,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 168,
+      "candidateName": "张建新",
+      "candidateType": 1,
+      "provinceCode": 110,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 169,
+      "candidateName": "张明",
+      "candidateType": 1,
+      "provinceCode": 320,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 170,
+      "candidateName": "张守臣",
+      "candidateType": 1,
+      "provinceCode": 230,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 171,
+      "candidateName": "张姝玥",
+      "candidateType": 1,
+      "provinceCode": 450,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 172,
+      "candidateName": "张卫",
+      "candidateType": 1,
+      "provinceCode": 440,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 173,
+      "candidateName": "张文新",
+      "candidateType": 1,
+      "provinceCode": 370,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 174,
+      "candidateName": "张效初",
+      "candidateType": 1,
+      "provinceCode": 340,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 175,
+      "candidateName": "张彦彦",
+      "candidateType": 1,
+      "provinceCode": 220,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 176,
+      "candidateName": "张志杰",
+      "candidateType": 1,
+      "provinceCode": 130,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 177,
+      "candidateName": "赵国祥",
+      "candidateType": 1,
+      "provinceCode": 410,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 178,
+      "candidateName": "赵立",
+      "candidateType": 1,
+      "provinceCode": 330,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 179,
+      "candidateName": "赵庆柏",
+      "candidateType": 1,
+      "provinceCode": 420,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 180,
+      "candidateName": "赵守盈",
+      "candidateType": 1,
+      "provinceCode": 520,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 181,
+      "candidateName": "赵鑫",
+      "candidateType": 1,
+      "provinceCode": 620,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 182,
+      "candidateName": "郑剑虹",
+      "candidateType": 1,
+      "provinceCode": 440,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 183,
+      "candidateName": "郑希付",
+      "candidateType": 1,
+      "provinceCode": 440,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 184,
+      "candidateName": "周仁来",
+      "candidateType": 1,
+      "provinceCode": 320,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 185,
+      "candidateName": "周雯",
+      "candidateType": 1,
+      "provinceCode": 110,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 186,
+      "candidateName": "周晓林",
+      "candidateType": 1,
+      "provinceCode": 310,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 187,
+      "candidateName": "周欣悦",
+      "candidateType": 1,
+      "provinceCode": 330,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 188,
+      "candidateName": "周宗奎",
+      "candidateType": 1,
+      "provinceCode": 420,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 189,
+      "candidateName": "朱熊兆",
+      "candidateType": 1,
+      "provinceCode": 430,
+      "provinceName": null,
+      "checked": 0
+    },
+    {
+      "candidateId": 190,
+      "candidateName": "佐斌",
+      "candidateType": 1,
+      "provinceCode": 440,
+      "provinceName": null,
+      "checked": 0
+    }
+  ],
+  "extraItem": [
+    {
+      "candidateType": 0,
+      "candidateName": "啊啊啊"
+    }, {
+      "candidateType": 1,
+      "candidateName": "你大大"
+    }, {
+      "candidateType": 1,
+      "candidateName": "我是谁"
+    }
+  ]
+}

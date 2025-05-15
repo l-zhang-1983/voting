@@ -13,6 +13,14 @@ $ curl -X POST localhost:8080/common/getProvince \
     -w '\n' | jq
 ```
 
+- ballotList
+```shell
+$ curl -X POST 127.0.0.1:8080/collect/blankBallot \
+    -H "Content-Type: application/json" \
+    -d '{"param": {}}' \
+    -w '\n' | jq
+```
+
 - ballotListForPage
 ```shell
 $ curl -X POST 127.0.0.1:8080/collect/ballotList \
