@@ -5,4 +5,6 @@ public class Constants {
     public static final Integer CANDIDATE_TYPE_DIRECTOR = 1;
     public static final Integer CANDIDATE_TYPE_SUPERVISOR_EXCEEDED = 7;
     public static final Integer CANDIDATE_TYPE_DIRECTOR_EXCEEDED = 99;
+    public static final Integer EXTRA_CANDIDATE_ID = 9999;
+
 }

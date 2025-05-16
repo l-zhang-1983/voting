@@ -3,6 +3,10 @@ const convertMap = {
     "1": "理事候选人",
 }
 
+const EXTRA_CANDIDATE_ID = 9999;
+const CANDIDATE_TYPE_DIRECTOR_EXCEEDED = 99;
+const CANDIDATE_TYPE_SUPERVISOR_EXCEEDED = 7;
+
 function convert(item) {
     return convertMap[item] || '';
 }

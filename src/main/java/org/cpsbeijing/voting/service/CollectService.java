@@ -192,7 +192,7 @@ public class CollectService {
             }
         }
 
-        Iterable<BallotItem> directorList = ballotContents.getSupervisorList();
+        Iterable<BallotItem> directorList = ballotContents.getDirectorList();
         Iterator<BallotItem> directorIterator = directorList.iterator();
         BallotDetails directorDetails;
         List<BallotDetails> directorDetailsList = new ArrayList<>();
@@ -209,6 +209,15 @@ public class CollectService {
                 directorDetails.setCandidate(candidateInfo);
                 directorDetailsList.add(directorDetails);
             }
+        }
+
+        Iterable<BallotItem> extraList = ballotContents.getExtraList();
+        Iterator<BallotItem> extraIterator = extraList.iterator();
+        BallotDetails extraDetails;
+        List<BallotDetails> extraDetailsList = new ArrayList<>();
+        while (extraIterator.hasNext()) {
+            BallotItem ballotItem = extraIterator.next();
+            // TODO
         }
 
         // 更新选票中的统计信息

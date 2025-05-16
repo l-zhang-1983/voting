@@ -42,10 +42,16 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
             </div>
             <div class="modal-body">
-                    <div class="col-lg-10 offset-lg-1">
-                        <h5>监事候选人预备人选 - 已选中[<span id="countSupervisor">0</span>]人</h5>
+                <div class="col-lg-2 offset-lg-1">
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">选票序号</span>
+                        <input type="text" class="form-control" id="serialNo">
                     </div>
-                    <div id="groupSupervisor" class="row mb-3"></div>
+                </div>
+                <div class="col-lg-10 offset-lg-1">
+                    <h5>监事候选人预备人选 - 已选中[<span id="countSupervisor">0</span>]人</h5>
+                </div>
+                <div id="groupSupervisor" class="row mb-3"></div>
                 <div class="mb-3 section">
                     <div class="col-lg-10 offset-lg-1 section-header">
                         <h5>理事候选人预备人选 - 已选中[<span id="countDirector">0</span>]人</h5>
@@ -53,8 +59,7 @@
                     <div id="groupDirector" class="row mb-3"></div>
                 </div>
                 <div class="mb-3">
-
-                    <div class="col-lg-6 offset-lg-1">
+                    <div class="col-lg-10 offset-lg-1">
                         <h5>额外添加项（最多 3 人，已添加 <span id="countExtra">0</span> 人，点击已添加的姓名即可删除）</h5>
                         <div class="mb-3">
                             <div class="input-group">
