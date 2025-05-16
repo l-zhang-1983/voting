@@ -19,17 +19,18 @@
             <i class="bi bi-database-add"></i> Add
         </button>
     </div>
-    <table id="collect_table">
-        <thead>
-        <tr>
-            <th data-field="ballotId" hidden></th>
-            <th data-field="serialNo">选票编号</th>
-            <th data-field="supervisorCount">监事候选人数量</th>
-            <th data-field="supervisorExceeded">supervisorExceeded</th>
-            <th data-field="directorCount">理事候选人数量</th>
-            <th data-field="directorExceed">directorExceed</th>
-        </tr>
-        </thead>
+    <table id="collect_table"
+           data-url="/collect/ballotList"
+           data-method="POST"
+           data-pagination="true"
+           data-side-pagination="server"
+           data-show-refresh="true"
+           data-show-fullscreen="true"
+           data-toolbar="#collect_toolbar"
+           data-show-toggle="true"
+           data-page-number="1"
+           data-page-size="10"
+           data-page-list="[10, 20, 50, all]">
     </table>
 </div>
 
@@ -37,35 +38,45 @@
     <div class="modal-dialog modal-extra-wide modal-dialog-scrollable">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">选择项目
-                <br>监事候选人预备人选/理事候选人预备人选/额外人员已选中：<span id="countSupervisor">0</span>/<span id="countDirector">0</span>/<span id="countExtra">0</span>个</h5>
+                <h5 class="modal-title">选票信息</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
             </div>
             <div class="modal-body">
-                <div>
-                    <h6>监事候选人预备人选</h6>
+                    <div class="col-lg-10 offset-lg-1">
+                        <h5>监事候选人预备人选 - 已选中[<span id="countSupervisor">0</span>]人</h5>
+                    </div>
                     <div id="groupSupervisor" class="row mb-3"></div>
-                </div>
-                <div>
-                    <h6>理事候选人预备人选</h6>
+                <div class="mb-3 section">
+                    <div class="col-lg-10 offset-lg-1 section-header">
+                        <h5>理事候选人预备人选 - 已选中[<span id="countDirector">0</span>]人</h5>
+                    </div>
                     <div id="groupDirector" class="row mb-3"></div>
                 </div>
-                <div class="row g-2 mb-2">
-                    <h6>额外候选人（最多 3 个）</h6>
-                    <div class="col-6">
-                        <input type="text" id="extraInput" class="form-control" placeholder="输入项名称">
-                    </div>
-                    <div class="col-2">
-                        <select id="extraType" class="form-select">
-                            <option value="0">监事</option>
-                            <option value="1">理事</option>
-                        </select>
-                    </div>
-                    <div class="col-auto">
-                        <button type="button" class="btn btn-outline-secondary" onclick="addExtraItem()">添加</button>
+                <div class="mb-3">
+
+                    <div class="col-lg-6 offset-lg-1">
+                        <h5>额外添加项（最多 3 人，已添加 <span id="countExtra">0</span> 人，点击已添加的姓名即可删除）</h5>
+                        <div class="mb-3">
+                            <div class="input-group">
+                            </div>
+                        </div>
+                        <div class="col-lg-8 offset-lg-1">
+                            <div class="input-group mb-3">
+                                <span class="input-group-text">姓名</span>
+                                <input type="text" class="form-control" id="extraInput">
+                                <span class="input-group-text">类型</span>
+                                <select id="extraType" class="form-select w-auto">
+                                    <option value="0">监事候选人</option>
+                                    <option value="1">理事候选人</option>
+                                </select>
+                                <button id="addExtraBtn" class="btn btn-outline-primary" onclick="addExtraItem()">添加</button>
+                            </div>
+                        </div>
+                        <div class="col-lg-8 offset-lg-1">
+                            <div id="extraItems" class="mb-3"></div>
+                        </div>
                     </div>
                 </div>
-                <div id="extraItems" class="row mb-3"></div>
             </div>
             <div class="modal-footer">
                 <button id="submitBtn" class="btn btn-primary">提交</button>
@@ -73,6 +84,8 @@
         </div>
     </div>
 </div>
+
+<div class="toast-container position-fixed bottom-0 end-0 p-3"></div>
 
 <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
 <script src="bootstrap-5.3.6/js/bootstrap.min.js" crossorigin="anonymous"></script>

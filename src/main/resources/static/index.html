@@ -9,12 +9,11 @@
     .tag-btn {
       margin: 2px;
     }
-    .col-8-centered {
-      margin-left: auto;
-      margin-right: auto;
-    }
     .form-check-label {
       user-select: none;
+    }
+    .modal-extra-wide {
+      max-width: 80% !important;
     }
   </style>
 </head>
@@ -23,49 +22,73 @@
 <button class="btn btn-primary" onclick="openModal()">打开投票模态框</button>
 
 <div class="modal fade" id="voteModal" tabindex="-1" aria-hidden="true">
-  <div class="modal-dialog modal-xl">
+  <div class="modal-dialog modal-extra-wide modal-dialog-scrollable">
     <div class="modal-content">
-
       <div class="modal-header">
         <h5 class="modal-title">候选人投票</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="关闭"></button>
       </div>
-
       <div class="modal-body">
-        <!-- 监事候选人 -->
-        <div class="row mb-3">
-          <div class="col-8 col-8-centered">
-            <h6>监事候选人（已选中：<span id="count-supervisor">0</span>）</h6>
-            <div id="supervisorList" class="row row-cols-8 g-2"></div>
+        <div>
+          <h6>监事候选人预备人选（已选中：<span id="count-supervisor">0</span>）</h6>
+          <div id="supervisorList" class="row mb-3"></div>
+        </div>
+        <div>
+          <h6>理事候选人预备人选（已选中：<span id="count-director">0</span>）</h6>
+          <div id="directorList" class="row mb-3"></div>
+        </div>
+        <div class="row g-2 mb-2">
+          <h6>额外候选人（最多 3 个，已添加：<span id="extra-count">0</span>）</h6>
+          <div class="col-6">
+            <input type="text" id="extraInput" class="form-control" placeholder="输入项名称">
+          </div>
+          <div class="col-2">
+            <select id="extraType" class="form-select">
+              <option value="0">监事</option>
+              <option value="1">理事</option>
+            </select>
+          </div>
+          <div class="col-auto">
+            <button type="button" class="btn btn-outline-secondary" onclick="addExtraItem()">添加</button>
           </div>
         </div>
-
-        <!-- 董事候选人 -->
-        <div class="row mb-3">
-          <div class="col-8 col-8-centered">
-            <h6>董事候选人（已选中：<span id="count-director">0</span>）</h6>
-            <div id="directorList" class="row row-cols-8 g-2"></div>
-          </div>
-        </div>
-
-        <hr />
-
-        <!-- 额外添加项 -->
-        <div class="row mb-3">
-          <div class="col-8 col-8-centered">
-            <h6>额外添加项（最多 3 个，已添加：<span id="extra-count">0</span>）</h6>
-            <div class="input-group mb-2">
-              <select id="extraType" class="form-select w-auto">
-                <option value="0">监事</option>
-                <option value="1">董事</option>
-              </select>
-              <input type="text" id="extraInput" class="form-control" placeholder="输入姓名" />
-              <button class="btn btn-outline-secondary" onclick="addExtraItem()">添加</button>
-            </div>
-            <div id="extraItems" class="mb-2"></div>
-          </div>
-        </div>
+        <div id="extraItems" class="row mb-3"></div>
       </div>
+<!--      <div class="modal-body">-->
+<!--        &lt;!&ndash; 监事候选人 &ndash;&gt;-->
+<!--        <div class="row mb-3">-->
+<!--          <div class="col-8 col-8-centered">-->
+<!--            <h6>监事候选人（已选中：<span id="count-supervisor">0</span>）</h6>-->
+<!--            <div id="supervisorList" class="row row-cols-8 g-2"></div>-->
+<!--          </div>-->
+<!--        </div>-->
+
+<!--        &lt;!&ndash; 董事候选人 &ndash;&gt;-->
+<!--        <div class="row mb-3">-->
+<!--          <div class="col-8 col-8-centered">-->
+<!--            <h6>董事候选人（已选中：<span id="count-director">0</span>）</h6>-->
+<!--            <div id="directorList" class="row row-cols-8 g-2"></div>-->
+<!--          </div>-->
+<!--        </div>-->
+
+<!--        <hr />-->
+
+<!--        &lt;!&ndash; 额外添加项 &ndash;&gt;-->
+<!--        <div class="row mb-3">-->
+<!--          <div class="col-8 col-8-centered">-->
+<!--            <h6>额外添加项（最多 3 个，已添加：<span id="extra-count">0</span>）</h6>-->
+<!--            <div class="input-group mb-2">-->
+<!--              <select id="extraType" class="form-select w-auto">-->
+<!--                <option value="0">监事</option>-->
+<!--                <option value="1">董事</option>-->
+<!--              </select>-->
+<!--              <input type="text" id="extraInput" class="form-control" placeholder="输入姓名" />-->
+<!--              <button class="btn btn-outline-secondary" onclick="addExtraItem()">添加</button>-->
+<!--            </div>-->
+<!--            <div id="extraItems" class="mb-2"></div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
 
       <div class="modal-footer">
         <button class="btn btn-primary" onclick="submitVote()">提交</button>
@@ -112,7 +135,13 @@
         { candidateId: 17, candidateName: '董事庚', checked: false },
         { candidateId: 18, candidateName: '董事辛', checked: false }
       ],
-      extraItem: []
+      extraItem: [{
+        "candidateType": 0,
+        "candidateName": "啊啊啊"
+      }, {
+        "candidateType": 1,
+        "candidateName": "我是谁"
+      }]
     };
 
     renderModal(data);
@@ -136,7 +165,7 @@
 
   function createCheckbox(item, group) {
     const col = document.createElement('div');
-    col.className = 'col'; // 关键：必须有 col 类
+    col.className = 'col-lg-1'; // 关键：必须有 col 类
 
     const input = document.createElement('input');
     input.type = 'checkbox';

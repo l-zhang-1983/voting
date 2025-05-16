@@ -1,88 +1,51 @@
-const collect_table = $('table#collect_table');
+let collect_table = $('#collect_table');
 
-function initTable() {
-    collect_table.bootstrapTable('destroy').bootstrapTable({
-        idField: 'ballotId',
-        dataField: 'rows',
-        columns: [{
-            checkbox: true
-        }, {
-            field: 'ballotId'
-            , width: '75'
-            , align: 'center'
-            , valign: 'middle'
-        }, {
-            title: '编号',
-            field: 'serialNo',
-            align: 'center',
-            valign: 'middle',
-            sortable: true
-        }, {
-            title: '监事候选人人数',
-            field: 'supervisorCount',
-            align: 'center',
-            valign: 'middle',
-        }, {
-            title: '理事候选人人数',
-            field: 'directorCount',
-            align: 'center',
-            valign: 'middle',
-            sortable: true,
-        }, {
-            field: 'operate',
-            title: '',
-            align: 'center',
-            valign: 'middle',
-            clickToSelect: false,
-            events: window.operateEvents,
-            formatter: operateFormatter
-        }],
-        // , search: true
-        // , searchable: true
-        // , showSearchButton: true
-        queryParams: function (params) {
-            params.pagingConfig = {"page": params.offset, "size": params.limit}
-            params.param = {search: params.search ? params.search : ''};
-            delete params.search;
-            delete params.limit;
-            delete params.offset;
-            delete params.order;
-            delete params.sort;
-            console.log(params);
-            return JSON.stringify(params);
-        },
-        responseHandler: function (res) {
-            res.rows = res.data.content;
-            res.total = res.data.totalElements;
-            delete res.data;
-            return res;
-        },
-        onLoadSuccess: function (data) {
-            collect_table.bootstrapTable('resetView');
-        },
-        onLoadError: function (status, res) {
-        }
-    });
-}
-
-function operateFormatter(value, row) {
-    return '<i class="bi bi-pencil-square"></i>';
-}
-
-// document.querySelector('.bi-pencil-square')
-//     .addEventListener('click', function (e) {
-//         alert(JSON.stringify(e));
-// });
-
-window.operateEvents = {
-    'click .bi-pencil-square'(e, value, row) {
-        alert(`You click like action, row: ${JSON.stringify(row)}`)
+collect_table.bootstrapTable({
+    url: '/collect/ballotList'
+    , method: 'post'
+    , sidePagination: 'server'
+    , pagination: true
+    , idField: 'ballotId'
+    , pageNumber: 1
+    , pageSize: 10
+    , pageList: '[10, 20, 50, all]'
+    , dataField: 'rows'
+    , sortOrder : 'asc'
+    , showRefresh: true
+    , showFullscreen: true
+    // , search: true
+    // , searchable: true
+    // , showSearchButton: true
+    , idTable: 'collect_table'
+    , toolbar: '#collect_toolbar'
+    , queryParams: function(params) {
+        // alert(JSON.stringify(params, null, 2));
+        params.pagingConfig = {"page": params.offset, "size": params.limit}
+        params.param = {search: params.search ? params.search : ''};
+        return params;
     }
-}
-
-$(document).ready(function () {
-    initTable();
+    , responseHandler: function(res) {
+        // console.log(res);
+        res.rows = res.data.content;
+        res.total = res.data.totalElements;
+        delete res.data;
+        return res;
+    }
+    , onLoadSuccess: function(data) {
+        collect_table.bootstrapTable('resetView');
+    }
+    , onLoadError: function(status, res) {
+    }
 });
+
+$('body').on('click', 'button#btnRebuildTesteeList', function(event) {
+    buildTable({planId: planId, gradeType: gradeType, encryptType: encryptType, itemType: itemType});
+});
+
+window.onload = function() {
+};
+
+const MAX_EXTRA = 3;
 
 function openModal() {
     const modalEl = document.getElementById('myModal');
@@ -105,10 +68,9 @@ function openModal() {
 
     // 模拟后端请求
     fetchCheckboxData().then(data => {
-        generateCheckboxes(groupSupervisor, data.supervisorList, '0');
-        generateCheckboxes(groupDirector, data.directorList, '1', data.supervisorList.length);
-        // generateExtraItem(extraItems, data.extraItem);
-        data.extraItem.forEach(item => addExtraTag(item.candidateName, item.candidateType));
+        generateCheckboxes(groupSupervisor, data.supervisorList, 'S');
+        generateCheckboxes(groupDirector, data.directorList, 'D');
+        generateExtraItem(extraItems, data.extraItem);
         updateCounts();
     });
 
@@ -134,7 +96,7 @@ function fetchCheckboxData() {
     });
 }
 
-function generateCheckboxes(container, items, groupName, startIndex = 0) {
+function generateCheckboxes(container, items, groupName) {
     let counter = 0;
     items.forEach(item => {
         const wrapper = document.createElement('div');
@@ -159,12 +121,13 @@ function generateCheckboxes(container, items, groupName, startIndex = 0) {
         const colContainer = document.createElement('div');
         if (counter % 8 == 0) {
             const lineNo = document.createElement('div');
-            lineNo.className = 'col-lg-1 offset-lg-1 line-no';
+            lineNo.className = 'col-lg-1 offset-lg-1';
             const lineLabel = document.createElement('label');
             lineLabel.className = 'form-check-label';
             lineLabel.htmlFor = '';
-            lineLabel.textContent = String(startIndex / 8 + 1);
+            lineLabel.textContent = String((+counter) / 8 + 1);
             lineNo.appendChild(lineLabel)
+            lineNo.style = 'padding: 8px 0; font-size: 18px; font-weight: bold;';
             container.appendChild(lineNo);
 
             colContainer.className = 'col-lg-1';
@@ -174,11 +137,10 @@ function generateCheckboxes(container, items, groupName, startIndex = 0) {
             colContainer.className = 'col-lg-1';
         }
         colContainer.appendChild(wrapper);
-        colContainer.className += ' container-extra';
+        colContainer.style = 'padding: 8px 0; font-size: 18px; font-weight: bold;';
 
         container.appendChild(colContainer);
         counter++;
-        startIndex++;
     });
 }
 
@@ -234,59 +196,72 @@ document.querySelector('.modal-body').addEventListener('change', function (e) {
 function updateCounts() {
     const supervisorChecked = document.querySelectorAll('#groupSupervisor input:checked').length;
     const directorChecked = document.querySelectorAll('#groupDirector input:checked').length;
-    const extraChecked = document.querySelectorAll('#extraItems .tag-btn').length;
+    const extraChecked = document.querySelectorAll('#extraItems input:checked').length;
 
-    if (supervisorChecked > 5) {
-        document.getElementById('countSupervisor').style = 'color: red';
-    } else {
-        document.getElementById('countSupervisor').style = '';
-    }
-    document.getElementById('countSupervisor').textContent = supervisorChecked;
+    document.getElementById('countSupervisor').innerHTML = '<span>' + supervisorChecked + '</span>';
     document.getElementById('countDirector').textContent = directorChecked;
     document.getElementById('countExtra').textContent = extraChecked;
-
-    document.getElementById('addExtraBtn').disabled = extraChecked == 3;
-    document.getElementById('extraInput').disabled = extraChecked == 3;
-    document.getElementById('extraType').disabled = extraChecked == 3;
 }
 
 function addExtraItem() {
-    const name = document.getElementById('extraInput').value.trim();
-    const type = document.getElementById('extraType').value;
-    const count = document.querySelectorAll('#extraItems .tag-btn').length;
-    if (!name) {
-        // alert('请输入姓名');
-        showToast({
-            title: '提示信息',
-            message: '请输入姓名',
-            type: 'error',
-            delay: 3000
-        });
+    const input = document.getElementById('extraInput');
+    const typeSelect = document.getElementById('extraType');
+    const container = document.getElementById('extraItems');
+    const currentCount = container.querySelectorAll('input[type="checkbox"]').length;
+
+    const value = input.value.trim();
+    const type = typeSelect.value;
+    if (!value) {
+        alert("请输入有效内容");
         return;
     }
 
-    // if (count >= MAX_EXTRA) {
-    //     alert(`最多只能添加 ${MAX_EXTRA} 项`);
-    //     return;
-    // }
+    if (currentCount >= MAX_EXTRA) {
+        alert("最多只能添加 " + MAX_EXTRA + " 项");
+        return;
+    }
 
-    addExtraTag(name, type);
-    document.getElementById('extraInput').value = '';
-    updateCounts();
-}
+    const id = 'extra_' + Date.now();
 
-function addExtraTag(name, type) {
-    const btn = document.createElement('button');
-    btn.type = 'button';
-    btn.className = 'btn btn-sm btn-outline-primary tag-btn';
-    btn.textContent = name + '[' + convert(type) + ']';
-    btn.dataset.name = name;
-    btn.dataset.type = type;
-    btn.onclick = () => {
-        btn.remove();
+    const wrapper = document.createElement('div');
+    wrapper.className = 'form-check';
+
+    const checkbox = document.createElement('input');
+    checkbox.className = 'form-check-input';
+    checkbox.type = 'checkbox';
+    checkbox.id = id;
+    checkbox.name = 'extra';
+    checkbox.value = JSON.stringify({ label: value, type: type });
+    checkbox.checked = true;
+    checkbox.style.visibility = 'hidden';
+
+    const label = document.createElement('label');
+    label.className = 'form-check-label';
+    label.htmlFor = id;
+    label.textContent = value + ' [' + convert(type) + ']';
+
+    const delBtn = document.createElement('button');
+    delBtn.type = 'button';
+    delBtn.className = 'btn btn-danger btn-close btn-sm ms-2';
+    delBtn.onclick = () => {
+        colContainer.remove();
         updateCounts();
     };
-    document.getElementById('extraItems').appendChild(btn);
+
+    checkbox.addEventListener('change', updateCounts);
+
+    wrapper.appendChild(checkbox);
+    wrapper.appendChild(label);
+    wrapper.appendChild(delBtn);
+
+    const colContainer = document.createElement('div');
+    colContainer.className = 'col-lg-4';
+    colContainer.appendChild(wrapper);
+
+    container.appendChild(colContainer);
+
+    input.value = '';
+    updateCounts();
 }
 
 document.getElementById('submitBtn').addEventListener('click', function () {
@@ -294,44 +269,21 @@ document.getElementById('submitBtn').addEventListener('click', function () {
     const checkboxes = document.querySelectorAll('.modal-body input[type="checkbox"]:checked');
     checkboxes.forEach(cb => selected.push({'id': cb.id, 'value': cb.value, 'type': cb.name}));
 
-    const extra = document.querySelectorAll('#extraItems .tag-btn');
-    extra.forEach(label => {
-        selected.push({'id': 'extra', 'value': label.dataset.name, 'type': label.dataset.type});
-    });
+    // console.log('选中项：', selected);
+    // alert(JSON.stringify(selected, null, 2));
 
-    const param = {};
-    param.supervisorList = selected.filter(item => item.type == '0' && item.id != 'extra');
-    param.directorList = selected.filter(item => item.type == '1' && item.id != 'extra');
-    param.extraList = selected.filter(item => item.id == 'extra');
-    param.serialNo = '';
-
-    // console.log(param);
-
-    submitToBackend(param).then(success => {
+    submitToBackend(selected).then(success => {
         if (success) {
             const modal = bootstrap.Modal.getInstance(document.getElementById('myModal'));
             modal.hide();
-            showToast({
-                title: '提交成功',
-                message: '页面列表将被刷新',
-                type: 'info',
-                delay: 3000
-            });
-            collect_table.bootstrapTable('refresh');
         } else {
-            showToast({
-                title: '提交失败',
-                message: '请重试',
-                type: 'danger',
-                delay: 3000
-            });
+            alert('提交失败，请重试');
         }
     });
 });
 
 function submitToBackend(data) {
-    // console.log('提交给后端：', data);
-    // alert(JSON.stringify(data));
+    console.log('提交给后端：', data);
     return new Promise(resolve => {
         setTimeout(() => resolve(true), 800);
     });

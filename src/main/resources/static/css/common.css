@@ -1,3 +1,44 @@
 .modal-extra-wide {
-  max-width: 80% !important;
+  max-width: 95% !important;
+}
+
+.tag-btn {
+  margin: 2px;
+}
+
+.form-check-label {
+  user-select: none;
+}
+
+.line-no {
+  padding: 0 10px;
+  font-size: 18px;
+  /*font-weight: bold;*/
+  text-align: right;
+}
+
+.container-extra {
+  padding: 0 10px;
+  font-size: 18px;
+  /*font-weight: bold;*/
+}
+
+/* 每个内容区块 */
+.section {
+  position: relative;
+  min-height: 80vh; /* 内容高度要超过屏幕 */
+  margin-bottom: 50px;
+}
+
+/* 固定头部 */
+.section-header {
+  position: sticky;
+  top: -1px; /* 抵消边框 */
+  height: 60px;
+  display: flex;
+  background-color: white;
+  align-items: center;
+  /* 动态隐藏控制 */
+  opacity: 1;
+  transition: opacity 0.3s;
 }
